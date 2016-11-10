@@ -7,3 +7,4 @@ gem 'awesome_print'
 gem 'guard'
 gem 'guard-rspec'
 gem 'simplecov'
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?

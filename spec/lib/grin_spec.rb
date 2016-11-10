@@ -17,6 +17,13 @@ describe 'Grand River Information Network' do
     expect(r[:content][1][0]).to eq('St. Jacobs')
   end
 
-  xit 'gets the id for a given name' do
+  it 'gets the id for a given name' do
+    r = GRIN.get_station_id_by_name('St. Jacobs')
+		expect(r).to eq("14475")
   end
+
+	it 'gets a timeseries for a given name' do
+		r = GRIN.get_timeseries_list('St. Jacobs')
+		expect(r).to be_a(Array)
+	end
 end
