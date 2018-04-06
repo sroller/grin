@@ -3,6 +3,7 @@
 require 'httpclient'
 require 'json'
 require 'awesome_print'
+require 'date'
 
 module GRIN
 
@@ -28,7 +29,11 @@ BASE_URL = 'http://kiwis.grandriver.ca/KiWIS/KiWIS?service=kisters&type=querySer
 
   def self.station_list
     clnt = HTTPClient.new
-    r = clnt.get(BASE_URL+'getStationList')
+    begin
+        r = clnt.get(BASE_URL+'getStationList')
+    rescue StandardError => e
+        puts "ERRRO: #{e}"
+    end
 
     { status: r.status, content: JSON.parse(r.body)}
   end
@@ -64,14 +69,27 @@ BASE_URL = 'http://kiwis.grandriver.ca/KiWIS/KiWIS?service=kisters&type=querySer
 
   def self.waterflow(station, day=nil)
     return nil unless Waterflow.has_key? station
+    day = Time.now if day.nil?
     url = BASE_URL+"gettimeseriesvalues&ts_id=#{Waterflow[station]}"
-    url += "&from=#{day}T14:00:00&to=#{day}T22:00:00" unless day.nil?
+    url += "&from=#{(day-7200).strftime("%Y-%m-%dT%H:%M:%SZ")}&to=#{day.strftime("%Y-%m-%dT%H:%M:%SZ")}"
     clnt = HTTPClient.new
     # ap url
-    r = clnt.get(url)
-    data = JSON.parse(r.body)[0]['data']
-    avg = data.inject(0.0) { |sum,item| sum += item[1] } / data.size
-    data.inject(0.0) { |sum,item| sum += item[1] } / data.size
+    begin
+        r = clnt.get(url)
+    rescue StandardError => e
+        puts "ERROR: #{e}"
+        exit
+    end
+    # ap r.body
+    begin
+        data = JSON.parse(r.body)[0]['data']
+    rescue StandardError => e
+        puts "ERROR: JSON parse error"
+        ap url
+    else
+        avg = data.inject(0.0) { |sum,item| sum += item[1] } / data.size
+        data.inject(0.0) { |sum,item| sum += item[1] } / data.size
+    end
   end
 
   # flow relative to normal Summer low flow
