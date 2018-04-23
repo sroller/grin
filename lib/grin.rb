@@ -7,25 +7,14 @@ require 'date'
 
 module GRIN
 
-Waterflow = {
-  westmontrose: '8725042',
-  bridgeport: '8665042',
-  victoria: '8899042',
-  doon: '8677042',
-  galt: '8671042',
-  newhamburg: '8827042',
-	stjacobs: '8641042'
+Stammdaten = {
+  westmontrose:  { waterflow: '8725042', name: "Westmontrose", summerflow: 5.0 },
+  victoria:      { waterflow: '8899042', name: "Victoria Street", summerflow: 1.0 },
+  doon:          { waterflow: '8677042', name: "Doon Valley", body: "Grand River", summerflow: 11.0 },
+  galt:          { waterflow: '8671042', name: "Galt", body: "Grand River", summerflow: 15.0 },
+  newhamburg:    { waterflow: '8827042', name: "New Hamburg", body: "Nith River", summerflow: 1.5 },
+  stjacobs:      { waterflow: '8641042', name: "St. Jacobs", body: "Conestogo River", summerflow: 4.0 }
 }
-
-Summerflow = {
-  westmontrose: 5.0,
-  bridgeport: 11.0,
-  doon: 11.0,
-  galt: 15,
-  newhamburg: 1.5,
-	stjacobs: 4.0
-}
-
 
 BASE_URL = 'http://kiwis.grandriver.ca/KiWIS/KiWIS?service=kisters&type=queryServices&datasource=0&format=json&request='
 
@@ -70,13 +59,13 @@ BASE_URL = 'http://kiwis.grandriver.ca/KiWIS/KiWIS?service=kisters&type=querySer
   end
 
   def self.waterflow(station, day=nil)
-    return nil unless Waterflow.has_key? station
+    return nil unless Stammdaten.has_key? station
 		unless day.nil?
 			day = DateTime.parse(day)
 		else
 			day = DateTime.now
 		end
-    url = BASE_URL+"gettimeseriesvalues&ts_id=#{Waterflow[station]}"
+    url = BASE_URL+"gettimeseriesvalues&ts_id=#{Stammdaten[station][:waterflow]}"
 		# fetch the last 24 hours
     url += "&from=#{(day-1).strftime("%Y-%m-%dT%H:%M:%SZ")}&to=#{day.strftime("%Y-%m-%dT%H:%M:%SZ")}"
     clnt = HTTPClient.new
@@ -109,8 +98,8 @@ BASE_URL = 'http://kiwis.grandriver.ca/KiWIS/KiWIS?service=kisters&type=querySer
   # 2.0 would be double
   # 0.5 would be half and so on
   def self.relative_flow(station, day=nil)
-    return nil unless Summerflow.has_key? station
+    return nil unless Stammdaten.has_key? station
     flow = waterflow(station, day)
-    flow / Summerflow[station]
+    flow / Stammdaten[station][:summerflow]
   end
 end
