@@ -3,3 +3,5 @@
 Gemfile.lock
 coverage/
 tmp/
+html
+bin
