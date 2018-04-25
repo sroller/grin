@@ -9,7 +9,7 @@ module GRIN
 
 Stammdaten = {
   westmontrose:  { waterflow: '8725042', name: "Westmontrose", summerflow: 5.0 },
-  victoria:      { waterflow: '8899042', name: "Victoria Street", summerflow: 1.0 },
+  bridgeport:    { waterflow: '8665042', name: "Bridgeport", summerflow: 11.0 },
   doon:          { waterflow: '8677042', name: "Doon Valley", body: "Grand River", summerflow: 11.0 },
   galt:          { waterflow: '8671042', name: "Galt", body: "Grand River", summerflow: 15.0 },
   newhamburg:    { waterflow: '8827042', name: "New Hamburg", body: "Nith River", summerflow: 1.5 },
@@ -42,11 +42,20 @@ BASE_URL = 'http://kiwis.grandriver.ca/KiWIS/KiWIS?service=kisters&type=querySer
 		JSON.parse(r.body)[1][2]
 	end
 
-	def self.timeseries_list(ts_id, from, to=from)
+	def self.timeseries_list(station_id)
+		id = station_id.to_i
+		raise ArgumentError, "expected number, but station_id was #{station_id}" unless id.kind_of? Numeric
+		clnt = HTTPClient.new
+		r = clnt.get(BASE_URL+"getTimeSeriesList&station_no=#{id}")
+		list = JSON.parse(r.body)
+		list.map {|serie| [serie[3], serie[4], serie[5], serie[6]] }[1..-1]
+	end
+
+	def self.timeseries_values(ts_id, from, to=from)
     return nil if ts_id.nil? || from.nil? || to.nil?
   
 		clnt = HTTPClient.new
-    r = clnt.get(BASE_URL+"gettimeseriesvalues&ts_id=#{ts_id}&from=#{from}&to=#{to}")
+    r = clnt.get(BASE_URL+"getTimeSeriesValues&ts_id=#{ts_id}&from=#{from}&to=#{to}")
     JSON.parse(r.body)
 	end
 

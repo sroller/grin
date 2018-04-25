@@ -1,0 +1,241 @@
+station_name;station_no;station_id;parametertype_id;parametertype_name;stationparameter_name
+Luther Marsh Climate Station;11;15071;10447;TA;TA
+Luther Marsh Climate Station;11;15071;10639;PN;PN
+Luther Marsh Dam;12;15043;10425;LS;LS
+Luther Marsh Dam;12;15043;10420;HK;HK
+Luther Marsh Dam;12;15043;10435;QI;QI
+Luther Marsh Dam;12;15043;10641;QT;QT
+Salem;129;14833;10436;QR;QR
+Salem;129;14833;10418;HG;HG
+Brant Climate Station;13;14610;10447;TA;TA
+Brant Climate Station;13;14610;10639;PN;PN
+Erbsville;131;15007;10418;HG;HG
+Erbsville;131;15007;10436;QR;QR
+Laurel Creek Climate Station;132;15021;10639;PN;PN
+Laurel Creek Climate Station;132;15021;10447;TA;TA
+Laurel Creek Dam;133;15002;10641;QT;QT
+Laurel Creek Dam;133;15002;10425;LS;LS
+Laurel Creek Dam;133;15002;10435;QI;QI
+Laurel Creek Dam;133;15002;10420;HK;HK
+Weber Street;139;14493;10418;HG;HG
+Weber Street;139;14493;10436;QR;QR
+Burford Climate Station;14;14624;10639;PN;PN
+Burford Climate Station;14;14624;10447;TA;TA
+McKenzie Creek;143;14569;10436;QR;QR
+McKenzie Creek;143;14569;10418;HG;HG
+Aberfoyle;144;14575;10436;QR;QR
+Head Office Climate Station;145;14884;10428;PA;PA
+Head Office Climate Station;145;14884;10639;PN;PN
+Shades Mills Dam;148;37906;10641;QT;QT
+Shades Mills Dam;148;37906;10420;HK;HK
+Shades Mills Dam;148;37906;10425;LS;LS
+Shades Mills Dam;148;37906;10435;QI;QI
+Shades Mills Dam Climate Station;149;15113;10447;TA;TA
+Byng Island Climate Station;15;14803;10447;TA;TA
+Byng Island Climate Station;15;14803;10639;PN;PN
+Mill Creek;151;14867;10436;QR;QR
+Mill Creek;151;14867;10418;HG;HG
+Millbank Climate Station;152;14698;10639;PN;PN
+Millbank Climate Station;152;14698;10447;TA;TA
+Moorefield;153;14918;10436;QR;QR
+Moorefield;153;14918;10418;HG;HG
+Nithburg;155;14845;10436;QR;QR
+Nithburg;155;14845;10418;HG;HG
+Nithburg;155;14845;10639;PN;PN
+Ayr;156;14856;10436;QR;QR
+Ayr;156;14856;10418;HG;HG
+New Hamburg;157;14487;10436;QR;QR
+New Hamburg;157;14487;10418;HG;HG
+Philipsburg;159;14850;10418;HG;HG
+Philipsburg;159;14850;10436;QR;QR
+Elmira;16;15157;10418;HG;HG
+Elmira;16;15157;10436;QR;QR
+Canning;160;14861;10418;HG;HG
+Canning;160;14861;10436;QR;QR
+Port Maitland;162;14678;10628;HL;HL
+Port Maitland;162;14678;10452;UD;UD
+Port Maitland;162;14678;10646;US;US
+Schneider Creek;167;15026;10418;HG;HG
+Schneider Creek;167;15026;10436;QR;QR
+Beaverdale;168;14534;10418;HG;HG
+Beaverdale;168;14534;10436;QR;QR
+Hanlon;169;14482;10418;HG;HG
+Hanlon;169;14482;10436;QR;QR
+Hanlon WQ Station;170;15262;10450;TW;TW
+Hanlon WQ Station;170;15262;10647;WC;WC
+Hanlon WQ Station;170;15262;10650;WO;WO
+Hanlon WQ Station;170;15262;10652;WP;WP
+Hanlon WQ Station;170;15262;548;WT;WT
+Hanlon WQ Station;170;15262;10418;HG;HG
+Hanlon WQ Station;170;15262;10436;QR;QR
+Guelph Hydro Plant;177;15762;12784;VL;VL
+Guelph Lake Climate Station;178;14994;10447;TA;TA
+Guelph Lake Climate Station;178;14994;10639;PN;PN
+Guelph Lake Dam;179;14977;10641;QT;QT
+Guelph Lake Dam;179;14977;10420;HK;HK
+Guelph Lake Dam;179;14977;10435;QI;QI
+Guelph Lake Dam;179;14977;10425;LS;LS
+Woolwich Dam;18;15147;10641;QT;QT
+Woolwich Dam;18;15147;10435;QI;QI
+Woolwich Dam;18;15147;10420;HK;HK
+Woolwich Dam;18;15147;10425;LS;LS
+Road 32 WQ Station;183;15285;10436;QR;QR
+Road 32 WQ Station;183;15285;10447;TA;TA
+Road 32 WQ Station;183;15285;10418;HG;HG
+Road 32 WQ Station;183;15285;548;WT;WT
+Road 32 WQ Station;183;15285;10652;WP;WP
+Road 32 WQ Station;183;15285;10650;WO;WO
+Road 32 WQ Station;183;15285;10647;WC;WC
+Road 32 WQ Station;183;15285;10450;TW;TW
+Road 32 WQ Station;183;15285;10639;PN;PN
+Victoria Road;184;14983;10418;HG;HG
+Victoria Road;184;14983;10436;QR;QR
+Armstrong Mills;186;14512;10418;HG;HG
+Armstrong Mills;186;14512;10436;QR;QR
+Sulphur Creek d/s fish ladder;188;14795;10418;HG;HG
+Woolwich Dam Climate Station;19;15171;10447;TA;TA
+Woolwich Dam Climate Station;19;15171;10639;PN;PN
+Mount Vernon;192;14561;10418;HG;HG
+Mount Vernon;192;14561;10436;QR;QR
+Horner Creek;193;14554;10436;QR;QR
+Willow Brook;194;14453;10436;QR;QR
+New Dundee Dam;2;14587;10447;TA;TA
+New Dundee Dam;2;14587;10420;HK;HK
+Fairchild near Brantford;201;17772;10418;HG;HG
+Fairchild near Brantford;201;17772;10436;QR;QR
+Fairchild near Brantford;201;17772;10639;PN;PN
+Floradale GRCA;202;17625;10436;QR;QR
+Floradale GRCA;202;17625;10418;HG;HG
+Burford MOE Climate Station;206;35980;10639;PN;PN
+Burford MOE Climate Station;206;35980;10452;UD;UD
+Burford MOE Climate Station;206;35980;10646;US;US
+Dickie Settlement Road;207;41576;10436;QR;QR
+New Dundee Road;208;41578;10436;QR;QR
+Below Elmira;28;15162;10436;QR;QR
+Below Elmira;28;15162;10418;HG;HG
+Clair Creek;33;15012;10436;QR;QR
+Clair Creek;33;15012;10418;HG;HG
+Upper Drayton;35;14890;10418;HG;HG
+Upper Drayton;35;14890;10436;QR;QR
+Conestogo Climate Station;37;14929;10447;TA;TA
+Conestogo Climate Station;37;14929;10646;US;US
+Conestogo Climate Station;37;14929;10639;PN;PN
+Conestogo Climate Station;37;14929;10452;UD;UD
+Conestogo Dam;38;14908;10425;LS;LS
+Conestogo Dam;38;14908;10435;QI;QI
+Conestogo Dam;38;14908;10420;HK;HK
+Conestogo Dam;38;14908;10641;QT;QT
+Conestogo Hydro Plant;46;14955;12784;VL;VL
+Damascus Dam;47;15726;10420;HK;HK
+Drayton;49;14913;10418;HG;HG
+Drayton;49;14913;10436;QR;QR
+Glen Allan;50;14895;10436;QR;QR
+Glen Allan;50;14895;10418;HG;HG
+St. Jacobs;51;14475;10436;QR;QR
+St. Jacobs;51;14475;10418;HG;HG
+Elora Climate Station;54;14459;10436;QR;QR
+Elora Climate Station;54;14459;10639;PN;PN
+Eramosa;55;14838;10418;HG;HG
+Eramosa;55;14838;10436;QR;QR
+Wellesley Dam;56;15132;10447;TA;TA
+Wellesley Dam;56;15132;10420;HK;HK
+Wellesley Dam;56;15132;10639;PN;PN
+Blair WQ Station;58;15177;10450;TW;TW
+Blair WQ Station;58;15177;10647;WC;WC
+Blair WQ Station;58;15177;10650;WO;WO
+Blair WQ Station;58;15177;10652;WP;WP
+Blair WQ Station;58;15177;548;WT;WT
+Brant WQ Station;59;15200;548;WT;WT
+Brant WQ Station;59;15200;10436;QR;QR
+Brant WQ Station;59;15200;10418;HG;HG
+Brant WQ Station;59;15200;10652;WP;WP
+Brant WQ Station;59;15200;10650;WO;WO
+Brant WQ Station;59;15200;10647;WC;WC
+Brant WQ Station;59;15200;10450;TW;TW
+Brant WQ Station;59;15200;34557;W-NO3;W-NO3
+Brant WQ Station;59;15200;56031;W-DSA;W-DSA
+Brant WQ Station;59;15200;56039;W-LSA;W-LSA
+Arthur Climate Station;6;14447;10447;TA;TA
+Arthur Climate Station;6;14447;10639;PN;PN
+Brantford;60;14547;10418;HG;HG
+Brantford;60;14547;10436;QR;QR
+Bridgeport;61;14811;34557;W-NO3;W-NO3
+Bridgeport;61;14811;10436;QR;QR
+Bridgeport;61;14811;10418;HG;HG
+Galt;62;14821;10436;QR;QR
+Galt;62;14821;10418;HG;HG
+Doon;63;14816;10418;HG;HG
+Doon;63;14816;10436;QR;QR
+Dunnville upstream Weir 3;64;14786;10436;QR;QR
+Dunnville upstream Weir 3;64;14786;10418;HG;HG
+Glen Morris WQ Station;65;15241;548;WT;WT
+Glen Morris WQ Station;65;15241;10652;WP;WP
+Glen Morris WQ Station;65;15241;10650;WO;WO
+Glen Morris WQ Station;65;15241;10647;WC;WC
+Glen Morris WQ Station;65;15241;10639;PN;PN
+Glen Morris WQ Station;65;15241;10450;TW;TW
+Hidden Valley;66;14541;10436;QR;QR
+Hidden Valley;66;14541;10418;HG;HG
+Paris Climate Station;67;14724;10639;PN;PN
+Paris Climate Station;67;14724;10447;TA;TA
+Bridgeport WQ Station;68;15218;34557;W-NO3;W-NO3
+Bridgeport WQ Station;68;15218;10639;PN;PN
+Bridgeport WQ Station;68;15218;10647;WC;WC
+Bridgeport WQ Station;68;15218;10650;WO;WO
+Bridgeport WQ Station;68;15218;10652;WP;WP
+Bridgeport WQ Station;68;15218;10418;HG;HG
+Bridgeport WQ Station;68;15218;548;WT;WT
+Bridgeport WQ Station;68;15218;10450;TW;TW
+Bridgeport WQ Station;68;15218;10436;QR;QR
+Shand Dam;71;14389;10420;HK;HK
+Shand Dam;71;14389;10425;LS;LS
+Shand Dam;71;14389;10435;QI;QI
+Shand Dam;71;14389;10641;QT;QT
+Shand Dam Climate Station;72;14419;10646;US;US
+Shand Dam Climate Station;72;14419;10452;UD;UD
+Shand Dam Climate Station;72;14419;10639;PN;PN
+Shand Dam Climate Station;72;14419;10428;PA;PA
+Shand Dam Climate Station;72;14419;10447;TA;TA
+Shand Hydro Plant;78;15678;12784;VL;VL
+Upper Belwood;81;14434;10418;HG;HG
+Upper Belwood;81;14434;10436;QR;QR
+Victoria WQ Station;82;15317;10647;WC;WC
+Victoria WQ Station;82;15317;10650;WO;WO
+Victoria WQ Station;82;15317;10652;WP;WP
+Victoria WQ Station;82;15317;548;WT;WT
+Victoria WQ Station;82;15317;10418;HG;HG
+Victoria WQ Station;82;15317;10450;TW;TW
+Victoria WQ Station;82;15317;10436;QR;QR
+Waldemar;83;15061;10418;HG;HG
+Waldemar;83;15061;10436;QR;QR
+West Montrose;84;14504;10436;QR;QR
+West Montrose;84;14504;10418;HG;HG
+York;85;14827;10418;HG;HG
+York;85;14827;10436;QR;QR
+York;85;14827;10639;PN;PN
+York WQ Station;86;15336;10436;QR;QR
+York WQ Station;86;15336;10450;TW;TW
+York WQ Station;86;15336;10418;HG;HG
+York WQ Station;86;15336;548;WT;WT
+York WQ Station;86;15336;10652;WP;WP
+York WQ Station;86;15336;10650;WO;WO
+York WQ Station;86;15336;10647;WC;WC
+Below Shand;87;14440;10436;QR;QR
+Below Shand;87;14440;10418;HG;HG
+Below Shand WQ Station;88;15355;10647;WC;WC
+Below Shand WQ Station;88;15355;10650;WO;WO
+Below Shand WQ Station;88;15355;10652;WP;WP
+Below Shand WQ Station;88;15355;548;WT;WT
+Below Shand WQ Station;88;15355;10450;TW;TW
+Dundalk;89;14519;10436;QR;QR
+Dundalk;89;14519;10418;HG;HG
+Dundalk;89;14519;10639;PN;PN
+Baden Climate Station;9;14718;10447;TA;TA
+Baden Climate Station;9;14718;10639;PN;PN
+Dundalk Climate Station;90;15074;10447;TA;TA
+Leggatt;91;15056;10436;QR;QR
+Leggatt;91;15056;10418;HG;HG
+Marsville;92;14428;10436;QR;QR
+Marsville;92;14428;10418;HG;HG
+Keldon;93;15051;10418;HG;HG
+Keldon;93;15051;10436;QR;QR

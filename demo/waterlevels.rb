@@ -4,7 +4,7 @@ $LOAD_PATH << File.dirname(__FILE__)+ '/../lib'
 
 require_relative '../lib/grin'
 
-[:stjacobs, :westmontrose, :bridgeport, :victoria, :doon, :galt].each do |station|
+[:stjacobs, :westmontrose, :bridgeport, :doon, :galt].each do |station|
   datum = Time.now.to_s
   flow = GRIN.waterflow(station, datum)
     # ap flow
