@@ -7,9 +7,36 @@ require 'date'
 
 module GRIN
 
+Parametertype_label =
+	{
+	  'HG' => 'height, river stage',
+		'HK' => 'height, lake above specific datum',
+		'HL' => 'Elevation, natural lake',
+		'HR' => 'stage height',
+		'LS' => 'lake storage',
+		'PA' => 'pressure, athmospheric',
+		'PN' => 'precipitation normal',
+		'QI' => 'discharge, inflow',
+		'QR' => 'waterflow',
+		'QT' => 'discharge, computed total project outflow',
+		'TA' => 'temperature, air',
+		'TW' => 'temperature, water',
+		'UD' => 'wind direction (degrees)',
+		'US' => 'wind speed (mi/hr, m/sec)',
+		'VL' => 'power generation (megawatt * duration)',
+		'W-DSA' => 'W-DSA',
+		'W-LSA' => 'W-LSA',
+		'W-NO3' => 'W-NO3',
+		'WC' => 'Water conductance',
+		'WO' => 'Water, dissolved oxygen',
+		'WP' => 'Water, pH value',
+		'WT' => 'water temperature',
+  }
+
 Stammdaten = {
   westmontrose:  { waterflow: '8725042', name: "Westmontrose", summerflow: 5.0 },
   bridgeport:    { waterflow: '8665042', name: "Bridgeport", summerflow: 11.0 },
+  hiddenvalley:  { waterflow: '8695042', name: "Hidden Valley", summerflow: 15.0 },
   doon:          { waterflow: '8677042', name: "Doon Valley", body: "Grand River", summerflow: 11.0 },
   galt:          { waterflow: '8671042', name: "Galt", body: "Grand River", summerflow: 15.0 },
   newhamburg:    { waterflow: '8827042', name: "New Hamburg", body: "Nith River", summerflow: 1.5 },
