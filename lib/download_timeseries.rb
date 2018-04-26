@@ -36,7 +36,7 @@ parametertype_label =
   }
 
 
-stations = CSV.read(File.dirname(__FILE__) + '/../data/station_list.csv', { headers: true, converters: :all, header_converters: :symbol, col_sep: ';'})
+stations = CSV.read(File.dirname(__FILE__) + '/../data/stations.csv', { headers: true, converters: :all, header_converters: :symbol, col_sep: ';'})
 
 stations.each do |station|
 	STDERR.puts station[:station_name]
