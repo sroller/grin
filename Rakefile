@@ -26,17 +26,14 @@ file 'data/parameters.csv' do
 end
 
 desc "download list of stations and list of possible parameters"
-task :all => ['data', 'data/stations.csv', 'data/parameters.csv', :html_dir] do
-end
-
-file 'data/stations.csv' => 'html/index.html' do
-	sh 'ruby lib/create_html.rb'
-	sh 'ruby lib/download_timeseries.rb'
+task :data_dir => ['data', 'data/stations.csv', 'data/parameters.csv'] do
 end
 
 directory 'html'
 
 desc "create html files"
-task :html_dir => ['html'] do
+task :html_dir => ['html', :data_dir] do
+	sh 'ruby lib/create_html.rb'
+	sh 'ruby lib/download_timeseries.rb'
 end
 
