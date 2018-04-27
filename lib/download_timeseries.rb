@@ -43,13 +43,14 @@ stations.each do |station|
 	ts = GRIN.timeseries_list(station[:station_no])
 	ts.map! {|e| { ts_id: e[0], ts_name: e[1], parametertype_name: e[3] }}
 	erb = ERB.new <<~end_of_station
-	<!DOCTYPE html5>
+	<!DOCTYPE html>
+	<meta charset='UTF-8'>
 	<html>
 	<head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<title>Station: <%= station[:station_name] %></title>
 	</head>
-	<body>
+	<body onload="init_page()">
 	<h1><%= station[:station_name] %></h1>
 	<form action="http://kiwis.grandriver.ca/KiWIS/KiWIS?service=kisters&type=queryServices&request=gettimeseriesvalues&datasource=0&format=html&header=true">
 		<input type="hidden" name="service" value="kisters">
@@ -60,10 +61,10 @@ stations.each do |station|
 		<input type="hidden" name="format" value="html">
 		<div class="form-row">
 			<div class="col-sm-2">
-				<input type="date" class="form-control" name="from" value="2018-04-24"><br />
+				<input type="date" class="form-control gestern" name="from" value="2018-01-01"><br />
 			</div>
 			<div class="col-sm-2">
-				<input type="date" class="form-control" name="to" value="2018-04-25"><br />
+				<input type="date" class="form-control heute" name="to" value="2018-01-01"><br />
 			</div>
 			<div class="col-sm-2">
 				<input type="submit" class="form-control" value="Send">
@@ -83,6 +84,32 @@ stations.each do |station|
 	</div>
 	</form>
 	</body>
+	<script>
+	function set_date_value(field_class, datum) {
+		var field = document.querySelector(field_class);
+		field.value = datum.toISOString().split('T')[0];
+	}
+
+	function init_page() {
+		var heute, heute_field, gestern, gestern_field;
+
+		heute = new Date();
+		set_date_value('.heute', heute);
+		// heute_field = document.querySelector('.heute');
+		// heute_field.value = heute.toISOString().split('T')[0];
+
+		gestern = new Date(heute - 86400000);
+		set_date_value('.gestern', gestern);
+		// gestern_field = document.querySelector('.gestern');
+		// gestern_field.value = gestern.toISOString().split('T')[0];
+
+
+		// console.log("heute  : "+heute);
+		// console.log("heute feld: "+ heute_field);
+		// console.log("gestern: " + gestern);
+		// console.log("gestern feld: " + gestern_field);
+	}
+	</script>
 	</html>
 	end_of_station
 	File.open(File.dirname(__FILE__)+"/../html/#{station[:station_no].to_s+"-"+station[:station_name].gsub(/[\/\ ]+/,"")}.html", "w") {|f| f.write(erb.result(binding)) }
