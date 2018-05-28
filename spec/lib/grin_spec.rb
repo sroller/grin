@@ -22,10 +22,16 @@ describe 'Grand River Information Network' do
 		expect(r).to eq("14475")
   end
 
-	it 'gets a timeseries for a given name' do
+	it 'gets a timeseries values for a given name' do
 		# r = GRIN.get_timeseries_list('8665042', '2016-11-09T09:00:00', '2016-11-09T10:00:00')
-		r = GRIN.timeseries_list('8671042', '2016-11-09T09:00:00', '2016-11-09T10:00:00')
+		r = GRIN.timeseries_values('8671042', '2016-11-09T09:00:00', '2016-11-09T10:00:00')
 		expect(r).to be_a(Array)
+	end
+
+	it 'gets a list of possible timeseries' do
+		r = GRIN.timeseries_list('19')
+		expect(r).to be_a(Array)
+		expect(r.size).to eq(12)
 	end
 
   it 'returns a list of possible parameters' do
@@ -43,7 +49,7 @@ describe 'Grand River Information Network' do
     expect(r).to be_nil
   end
 
-  it 'return to relative flow to normal Summer low flow on a certain day' do
+  it 'return relative flow to normal Summer low flow on a certain day' do
     r = GRIN.waterflow(:westmontrose, '2016-10-29')
     expect(r).to be < 5.0
   end
@@ -52,5 +58,10 @@ describe 'Grand River Information Network' do
     r = GRIN.waterflow(:westmontrose)
     expect(r).to be_a(Numeric)
   end
+
+	it 'returns the relative flow for a station' do
+		r = GRIN.relative_flow(:westmontrose)
+		expect(r).to be_a(Numeric)
+	end
 
 end

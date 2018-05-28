@@ -7,6 +7,32 @@ require 'date'
 
 module GRIN
 
+Parametertype_label =
+	{
+	  'HG' => 'height, river stage',
+		'HK' => 'height, lake above specific datum',
+		'HL' => 'Elevation, natural lake',
+		'HR' => 'stage height',
+		'LS' => 'lake storage',
+		'PA' => 'pressure, athmospheric',
+		'PN' => 'precipitation normal',
+		'QI' => 'discharge, inflow',
+		'QR' => 'waterflow',
+		'QT' => 'discharge, computed total project outflow',
+		'TA' => 'temperature, air',
+		'TW' => 'temperature, water',
+		'UD' => 'wind direction (degrees)',
+		'US' => 'wind speed (mi/hr, m/sec)',
+		'VL' => 'power generation (megawatt * duration)',
+		'W-DSA' => 'W-DSA',
+		'W-LSA' => 'W-LSA',
+		'W-NO3' => 'W-NO3',
+		'WC' => 'Water conductance',
+		'WO' => 'Water, dissolved oxygen',
+		'WP' => 'Water, pH value',
+		'WT' => 'water temperature',
+  }
+
 Stammdaten = {
   west_montrose:  { waterflow: '8725042', name: "Westmontrose", summerflow: 5.0 },
   bridgeport:    { waterflow: '8665042', name: "Bridge Port", summerflow: 11.0 },
@@ -43,11 +69,20 @@ BASE_URL = 'http://kiwis.grandriver.ca/KiWIS/KiWIS?service=kisters&type=querySer
 		JSON.parse(r.body)[1][2]
 	end
 
-	def self.timeseries_list(ts_id, from, to=from)
+	def self.timeseries_list(station_id)
+		id = station_id.to_i
+		raise ArgumentError, "expected number, but station_id was #{station_id}" unless id.kind_of? Numeric
+		clnt = HTTPClient.new
+		r = clnt.get(BASE_URL+"getTimeSeriesList&station_no=#{id}")
+		list = JSON.parse(r.body)
+		list.map {|serie| [serie[3], serie[4], serie[5], serie[6]] }[1..-1]
+	end
+
+	def self.timeseries_values(ts_id, from, to=from)
     return nil if ts_id.nil? || from.nil? || to.nil?
   
 		clnt = HTTPClient.new
-    r = clnt.get(BASE_URL+"gettimeseriesvalues&ts_id=#{ts_id}&from=#{from}&to=#{to}")
+    r = clnt.get(BASE_URL+"getTimeSeriesValues&ts_id=#{ts_id}&from=#{from}&to=#{to}")
     JSON.parse(r.body)
 	end
 
@@ -104,3 +139,4 @@ BASE_URL = 'http://kiwis.grandriver.ca/KiWIS/KiWIS?service=kisters&type=querySer
     flow / Stammdaten[station][:summerflow]
   end
 end
+
