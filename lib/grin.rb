@@ -8,12 +8,13 @@ require 'date'
 module GRIN
 
 Stammdaten = {
-  westmontrose:  { waterflow: '8725042', name: "Westmontrose", summerflow: 5.0 },
-  victoria:      { waterflow: '8899042', name: "Victoria Street", summerflow: 1.0 },
+  west_montrose:  { waterflow: '8725042', name: "Westmontrose", summerflow: 5.0 },
+  bridgeport:    { waterflow: '8665042', name: "Bridge Port", summerflow: 11.0 },
+  hidden_valley: { waterflow: '8695042', name: "Hidden Valley", summerflow: 15.0 },
   doon:          { waterflow: '8677042', name: "Doon Valley", body: "Grand River", summerflow: 11.0 },
   galt:          { waterflow: '8671042', name: "Galt", body: "Grand River", summerflow: 15.0 },
-  newhamburg:    { waterflow: '8827042', name: "New Hamburg", body: "Nith River", summerflow: 1.5 },
-  stjacobs:      { waterflow: '8641042', name: "St. Jacobs", body: "Conestogo River", summerflow: 4.0 }
+  new_hamburg:    { waterflow: '8827042', name: "New Hamburg", body: "Nith River", summerflow: 1.5 },
+  st_jacobs:      { waterflow: '8641042', name: "St. Jacobs", body: "Conestogo River", summerflow: 4.0 }
 }
 
 BASE_URL = 'http://kiwis.grandriver.ca/KiWIS/KiWIS?service=kisters&type=queryServices&datasource=0&format=json&request='
@@ -61,7 +62,7 @@ BASE_URL = 'http://kiwis.grandriver.ca/KiWIS/KiWIS?service=kisters&type=querySer
   def self.waterflow(station, day=nil)
     return nil unless Stammdaten.has_key? station
 		unless day.nil?
-			day = DateTime.parse(day)
+      day = DateTime.parse(day) if day.kind_of? String
 		else
 			day = DateTime.now
 		end
@@ -84,7 +85,7 @@ BASE_URL = 'http://kiwis.grandriver.ca/KiWIS/KiWIS?service=kisters&type=querySer
         puts "ERROR: JSON parse error"
         ap url
     else
-			# ap data
+      # puts data
 			# print "%.2f/%.2f/%.2f" % [data[-1][1], data[-2][1], data[0][1]]
 			# "%.2f/%.2f/%.2f" % [data[-1][1], data[-2][1], data[0][1]]
       # avg = data.inject(0.0) { |sum,item| sum += item[1] } / data.size
