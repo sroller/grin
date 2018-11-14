@@ -36,7 +36,7 @@ Parametertype_label =
 Stammdaten = {
   west_montrose:  { waterflow: '8725042', name: "Westmontrose", summerflow: 5.0 },
   bridgeport:    { waterflow: '8665042', name: "Bridge Port", summerflow: 11.0 },
-  hidden_valley: { waterflow: '8695042', name: "Hidden Valley", summerflow: 15.0 },
+  hidden_valley: { waterflow: '8695042', name: "Hidden Valley", summerflow: 10.0 },
   doon:          { waterflow: '8677042', name: "Doon Valley", body: "Grand River", summerflow: 11.0 },
   galt:          { waterflow: '8671042', name: "Galt", body: "Grand River", summerflow: 15.0 },
   new_hamburg:    { waterflow: '8827042', name: "New Hamburg", body: "Nith River", summerflow: 1.5 },

@@ -9,7 +9,7 @@ stations = CSV.read(File.dirname(__FILE__) + "/../data/stations.csv", { headers:
 stations = stations.map {|s| s.to_hash.merge(parameters:[]) }
 
 stations_map = {}
-stations.each {|s|  stations_map[s[:station_no]] = s}
+stations.each {|s| stations_map[s[:station_no]] = s}
 
 parameters_map = {}
 CSV.foreach(File.dirname(__FILE__) + "/../data/parameters.csv", { headers: true, converters: :numeric, header_converters: :symbol, col_sep: ';' }) do |p|
@@ -41,7 +41,7 @@ station_template = ERB.new <<-end_of_stations
 	<td><%= station[:station_no] %></td>
 	<td><a href="<%=station[:station_no].to_s+'-'+station[:station_name].gsub(/[ \\/]+/,'')%>.html"><%= station[:station_name] %></a></td>
   <td><a href="https://maps.google.com/maps/place/<%=station[:station_latitude]%>,<%=station[:station_longitude]%>" target=maps>Google Maps</a></td>
-	<td><a href="https://www.openstreetmap.org/#map=16/<%=station[:station_latitude]%>/<%=station[:station_longitude]%>" target=maps>Open Street Map</a></td>
+	<td><a href="https://www.openstreetmap.org/?mlat=<%=station[:station_latitude]%>&mlon=<%=station[:station_longitude]%>#map=12/<%=station[:station_latitude]%>/<%=station[:station_longitude]%>" target=maps>Open Street Map</a></td>
 	<td>
 	<% station[:parameters].each do |param| %>
 		<%=param[:parametertype_label]%><br />
