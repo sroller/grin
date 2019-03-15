@@ -8,6 +8,7 @@ require_relative '../lib/grin'
 
 [:st_jacobs, :west_montrose, :bridgeport, :hidden_valley, :doon, :galt].each do |station|
   datum = DateTime.now
+  puts station.to_s
   flow = GRIN.waterflow(station, datum)
     ap flow
     unless flow.nil?

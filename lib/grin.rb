@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-#
+
 require 'httpclient'
 require 'json'
 require 'awesome_print'
@@ -43,7 +43,7 @@ Stammdaten = {
   st_jacobs:      { waterflow: '8641042', name: "St. Jacobs", body: "Conestogo River", summerflow: 4.0 }
 }
 
-BASE_URL = 'http://kiwis.grandriver.ca/KiWIS/KiWIS?service=kisters&type=queryServices&datasource=0&format=json&request='
+BASE_URL = 'https://waterdata.grandriver.ca/KiWIS/KiWIS?service=kisters&type=queryServices&datasource=0&format=json&request='
 
   def self.station_list
     clnt = HTTPClient.new
