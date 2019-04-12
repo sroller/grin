@@ -1,6 +1,8 @@
 require 'rake/clean'
 require 'httpclient'
 require 'rspec/core/rake_task'
+require 'csv'
+require 'awesome_print'
 
 DEPLOY_DIR='C:/src/pages/grin'
 GRIN_URL='https://waterdata.grandriver.ca/KiWIS/KiWIS?service=kisters&type=queryServices&request=%s&datasource=0&format=csv'
@@ -54,5 +56,21 @@ task :deploy do
   end
   Dir.chdir(DEPLOY_DIR)
   puts `git status`
+end
+
+desc "create hash of stations"
+task :hash => :data_dir do
+  puts "create hash"
+  stations_lst = CSV.read(File.dirname(__FILE__) + "/data/stations.csv", { headers: true, converters: :numeric, header_converters: :symbol, col_sep: ';' })
+  parameters_lst = CSV.read(File.dirname(__FILE__) + "/data/parameters.csv", { headers: true, converters: :numeric, header_converters: :symbol, col_sep: ';' })
+  stations = {}
+  stations_lst.each do |row|
+    stations[row[:station_no]] = row.to_hash.merge(parameters: [])
+  end
+  parameters_lst.each do |row|
+    station_no = row[:station_no]
+    stations[station_no][:parameters] << (Hash[row.headers[1..-1].zip(row.fields[1..-1])])
+  end
+  ap stations
 end
 
