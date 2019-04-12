@@ -52,7 +52,7 @@ stations.each do |station|
 	</head>
 	<body onload="init_page()">
 	<h1><%= station[:station_name] %></h1>
-	<form action="http://kiwis.grandriver.ca/KiWIS/KiWIS?service=kisters&type=queryServices&request=gettimeseriesvalues&datasource=0&format=html&header=true">
+	<form action="https://waterdata.grandriver.ca/KiWIS/KiWIS?service=kisters&type=queryServices&request=gettimeseriesvalues&datasource=0&format=html&header=true">
 		<input type="hidden" name="service" value="kisters">
 		<input type="hidden" name="type" value="queryServices">
 		<input type="hidden" name="request" value="getTimeSeriesValues">
@@ -114,3 +114,4 @@ stations.each do |station|
 	end_of_station
 	File.open(File.dirname(__FILE__)+"/../html/#{station[:station_no].to_s+"-"+station[:station_name].gsub(/[\/\ ]+/,"")}.html", "w") {|f| f.write(erb.result(binding)) }
 end
+

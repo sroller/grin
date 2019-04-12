@@ -3,7 +3,7 @@ require 'httpclient'
 require 'rspec/core/rake_task'
 
 DEPLOY_DIR='C:/src/pages/grin'
-GRIN_URL='http://kiwis.grandriver.ca/KiWIS/KiWIS?service=kisters&type=queryServices&request=%s&datasource=0&format=csv'
+GRIN_URL='https://waterdata.grandriver.ca/KiWIS/KiWIS?service=kisters&type=queryServices&request=%s&datasource=0&format=csv'
 
 begin
 	RSpec::Core::RakeTask.new(:spec)
@@ -16,7 +16,6 @@ CLOBBER.include('data/*', 'html/*', 'html', 'data')
 
 def download_csv(request, filename)
 	File.open(File.dirname(__FILE__)+"/data/#{filename}", "w") do |csv|
-		# csv.write(HTTPClient.new.get("http://kiwis.grandriver.ca/KiWIS/KiWIS?service=kisters&type=queryServices&request=#{request}&datasource=0&format=csv").body)
 		csv.write(HTTPClient.new.get(GRIN_URL % request).body)
 	end
 end
