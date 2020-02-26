@@ -141,3 +141,8 @@ Stammdaten = {
   end
 end
 
+if __FILE__ == $0
+  puts "Waterflows"
+  puts "Bridgeport #{GRIN}"
+end
+
