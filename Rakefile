@@ -4,7 +4,15 @@ require 'rspec/core/rake_task'
 require 'csv'
 require 'awesome_print'
 
-DEPLOY_DIR='C:/src/pages/grin'
+
+if Gem::Platform.local.os == 'mingw32'
+  DEPLOY_DIR='C:/src/pages/grin'
+elsif Gem::Platform.local.os == 'linux'
+  DEPLOY_DIR="#{ENV['HOME']}/src/pages/grin"
+else
+  raise "unknown OS"
+end
+
 GRIN_URL='https://waterdata.grandriver.ca/KiWIS/KiWIS?service=kisters&type=queryServices&request=%s&datasource=0&format=csv'
 
 begin
